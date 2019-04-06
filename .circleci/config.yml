@@ -1,0 +1,31 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/work
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+
+      - run: ./gradlew build
+
+      - store_test_results:
+          path: logrecorder-api/build/test-results
+          destination: logrecorder-api
+      - store_artifacts:
+          path: logrecorder-api/build/test-results
+          destination: logrecorder-api
+
+      - store_test_results:
+          path: logrecorder-logback/build/test-results
+          destination: logrecorder-logback
+      - store_artifacts:
+          path: logrecorder-logback/build/test-results
+          destination: logrecorder-logback
+
+workflows:
+  version: 2
+  ci-build:
+    jobs:
+      - build
