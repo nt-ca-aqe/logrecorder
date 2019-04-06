@@ -8,6 +8,7 @@ allprojects {
 
     ext {
         set("assertjVersion", "3.12.2")
+        set("logbackVersion", "1.2.3")
         set("junitVersion", "5.4.1")
     }
 
