@@ -1,10 +1,14 @@
+val assertjVersion:String = ext.get("assertjVersion") as String
+val junitVersion:String = ext.get("junitVersion") as String
+
 plugins { kotlin("jvm") }
 
 dependencies {
     implementation(kotlin("stdlib"))
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.1")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.withType<Test> {

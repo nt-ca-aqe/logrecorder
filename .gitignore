@@ -9,9 +9,7 @@
 
 ## intellij
 # User-specific stuff
-.idea/**/workspace.xml
 .idea/**/tasks.xml
-.idea/misc.xml
 .idea/**/dictionaries
 .idea/checkstyle-idea\.xml
 .idea/modules\.xml
@@ -26,7 +24,6 @@
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 # Gradle
-.idea/**/gradle.xml
 .idea/**/libraries
 # File-based project format
 *.iws
@@ -35,6 +32,7 @@ out/
 *.iml
 # Editor-based Rest Client
 .idea/httpRequests
+.idea
 
 # gradle
 **/build/

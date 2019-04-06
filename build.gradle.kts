@@ -6,6 +6,11 @@ allprojects {
     group = "de.novatec.logrecorder"
     version = "1.0.0-SNAPSHOT"
 
+    ext {
+        set("assertjVersion", "3.12.2")
+        set("junitVersion", "5.4.1")
+    }
+
     repositories {
         jcenter()
     }
