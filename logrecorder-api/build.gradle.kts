@@ -57,16 +57,6 @@ tasks {
                 artifact(javadocJar)
             }
         }
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/nt-ca-aqe/logrecorder")
-                credentials {
-                    username = System.getenv("USERNAME")
-                    password = System.getenv("TOKEN")
-                }
-            }
-        }
     }
 
 }
