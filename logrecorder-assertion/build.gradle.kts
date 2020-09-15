@@ -3,11 +3,12 @@ import org.gradle.jvm.tasks.Jar
 val assertjVersion: String = ext.get("assertjVersion") as String
 val junitVersion: String = ext.get("junitVersion") as String
 
+val javaComponent = components["java"] as AdhocComponentWithVariants
+
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.dokka")
-    id("com.jfrog.bintray")
-    `maven-publish`
+    id("maven-publish")
 }
 
 repositories {
@@ -48,4 +49,25 @@ tasks {
         add("archives", sourcesJar)
         add("archives", javadocJar)
     }
+
+    publishing {
+        publications {
+            create<MavenPublication>("default") {
+                from(javaComponent)
+                artifact(sourcesJar)
+                artifact(javadocJar)
+            }
+        }
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/nt-ca-aqe/logrecorder")
+                credentials {
+                    username = System.getenv("USERNAME")
+                    password = System.getenv("TOKEN")
+                }
+            }
+        }
+    }
+
 }

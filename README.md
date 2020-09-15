@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/nt-ca-aqe/logrecorder/tree/master.svg?style=svg)](https://circleci.com/gh/nt-ca-aqe/logrecorder/tree/master)
-
 # LogRecorder
 
 ## tl;dr
